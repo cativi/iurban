@@ -1,0 +1,16 @@
+nav {
+    background-color: #EF6B45;
+}
+
+#user>div {
+    border: 0.3125rem solid white;
+    border-radius: 1.5625rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    text-align: center;
+    margin-right: 0.4375rem;
+}
+
+div>p {
+    color: white;
+}
