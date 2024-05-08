@@ -1,5 +1,5 @@
 nav {
-    background-color: #EF6B45;
+    background-color: var(--orange);
 }
 
 #user>div {
