@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { HeroSection } from '../../../pages/home/models/home-data';
 
 @Component({
   selector: 'hero',
@@ -9,4 +10,5 @@ import { Component } from '@angular/core';
 })
 export class HeroComponent {
 
+  @Input() data: HeroSection | undefined;
 }
