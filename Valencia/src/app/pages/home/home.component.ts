@@ -3,12 +3,13 @@ import { HeroComponent } from '../../shared/components/hero/hero.component';
 import { HomeService } from './services/home.service';
 import { HomeData } from './models/home-data';
 import { HttpClient } from '@angular/common/http';
+import { RutasComponent } from '../../components/rutas/rutas.component';
 
 
 @Component({
   selector: 'home',
   standalone: true,
-  imports: [HeroComponent],
+  imports: [HeroComponent, RutasComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   providers: [HttpClient]
