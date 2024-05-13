@@ -1,5 +1,6 @@
 .card {
-    width: 20rem
+    /* width: 20rem; */
+    width: 17rem;
 }
 
 .card>div:first-child {
@@ -8,7 +9,7 @@
 
 .image {
     height: 200px;
-    width: 19.9rem;
+    width: 16.9rem;
     border-radius: 5px 5px 0 0;
     background-position: center center;
 }
@@ -44,7 +45,7 @@ div.card:first-child div p {
 
 .heart-holder {
     position: absolute;
-    left: 17.4rem;
+    left: 14.4rem;
     top: -12.5rem;
     z-index: 1;
     height: 40px;

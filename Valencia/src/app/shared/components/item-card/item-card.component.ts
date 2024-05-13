@@ -11,6 +11,8 @@ import { HomeService } from '../../../pages/home/services/home.service';
 })
 export class ItemCardComponent {
 
+  @Input() recommendation: any;
+
   itemCard: HomeData | undefined;
 
   recommendationList: RecommendedRoutesList[] = [];

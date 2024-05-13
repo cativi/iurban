@@ -2,17 +2,16 @@
 
     @if(itemCard){
     <div>
-        <div class="image" style="background-image: url('{{recommendationList[0].image}}')">
+        <div class="image" style="background-image: url('{{recommendation.image}}')">
         </div>
-        <p>{{recommendationList[0].route_days}} días</p>
+        <p>{{recommendation.route_days}} días</p>
         <div class="heart-holder">
             <i class="fa-regular fa-heart"></i>
         </div>
     </div>
     <div class="card-body">
-        <h5 class="card-title">{{recommendationList[0].name.es}}</h5>
+        <h5 class="card-title">{{recommendation.name.es}}</h5>
         <a href="#" class="btn">Usar esta ruta</a>
     </div>
     }
-
 </div>

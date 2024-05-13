@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input, OnInit, inject } from '@angular/core';
 import { ItemCardComponent } from '../../shared/components/item-card/item-card.component';
-import { RecommendedRoutesList } from '../../pages/home/models/home-data';
+import { HomeData, RecommendedRoutesList } from '../../pages/home/models/home-data';
+import { HomeService } from '../../pages/home/services/home.service';
 
 
 @Component({
@@ -12,13 +13,41 @@ import { RecommendedRoutesList } from '../../pages/home/models/home-data';
 })
 export class RutasComponent {
 
-  @Input() data: RecommendedRoutesList | undefined;
+  recommendationList: RecommendedRoutesList[] = [];
 
-  //   export interface RecommendedRoutesList {
-  //     id: number;
-  //     name: Claim;
-  //     image: string;
-  //     route_days: number;
-  // }
+  private recommendedRoutesService = inject(HomeService);
 
+  currentIndex: number = 0;
+  isMobile: boolean = false;
+
+  ngOnInit() {
+    this.checkScreenSize();
+    this.recommendedRoutesService.loadHomeData().subscribe((response: HomeData) => {
+      this.recommendationList = response.recommendedRoutesList;
+      console.log(this.recommendationList);
+    });
+  }
+
+  // Update isMobile variable based on screen size
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.checkScreenSize();
+  }
+
+  checkScreenSize() {
+    this.isMobile = window.innerWidth < 1224;
+  }
+
+  nextItems() {
+    if (this.currentIndex + 4 < this.recommendationList.length) {
+      this.currentIndex += 4;
+    }
+  }
+
+  previousItems() {
+    if (this.currentIndex - 4 >= 0) {
+      this.currentIndex -= 4;
+    }
+  }
 }
+

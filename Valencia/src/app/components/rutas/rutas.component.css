@@ -6,3 +6,21 @@ div h2 {
     height: 2.8125rem;
     text-align: center;
 }
+
+.col {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 0.25rem;
+    width: auto;
+}
+
+button {
+    height: 2.8125rem;
+}
+
+.button-container {
+    margin-top: auto;
+    margin-bottom: auto;
+}
