@@ -1,6 +1,8 @@
-@if(recommendationList){
-<div>
-  <h2>¡Tenemos estas rutas preparadas para ti!</h2>
+@if(eventos){
+<div id="eventosSection">
+  <div class="container mt-5">
+    <h3>Eventos >></h3>
+  </div>
 
   <div class="col m-4">
 
@@ -10,8 +12,8 @@
       <button (click)="previousItems()"><i class="fas fa-chevron-left"></i></button>
     </div>
 
-    @for (recommendation of recommendationList.slice(currentIndex, currentIndex + 4); track $index) {
-    <item-card [item]="recommendation"></item-card>
+    @for (event of eventos.slice(currentIndex, currentIndex + 4); track $index) {
+    <evento-card [event]="event"></evento-card>
     }
     <div class="button-container">
       <button (click)="nextItems()"><i class="fas fa-chevron-right"></i></button>
@@ -21,8 +23,8 @@
     <!-- SMALLER THAN 1224px -->
 
     @if (isMobile) {
-    @for (recommendation of recommendationList; track $index) {
-    <item-card [item]="recommendation"></item-card>
+    @for (event of eventos; track $index) {
+    <evento-card [event]="event"></evento-card>
     }
     }
 

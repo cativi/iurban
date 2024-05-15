@@ -13,7 +13,7 @@ import { HomeService } from '../../pages/home/services/home.service';
 })
 export class RutasComponent {
 
-  recommendationList: RecommendedRoutesList[] = [];
+  @Input() recommendationList: RecommendedRoutesList[] | undefined;
 
   private recommendedRoutesService = inject(HomeService);
 
@@ -22,10 +22,7 @@ export class RutasComponent {
 
   ngOnInit() {
     this.checkScreenSize();
-    this.recommendedRoutesService.loadHomeData().subscribe((response: HomeData) => {
-      this.recommendationList = response.recommendedRoutesList;
-      console.log(this.recommendationList);
-    });
+
   }
 
   // Update isMobile variable based on screen size
@@ -39,7 +36,8 @@ export class RutasComponent {
   }
 
   nextItems() {
-    if (this.currentIndex + 4 < this.recommendationList.length) {
+    if (this.recommendationList &&
+      this.currentIndex + 4 < this.recommendationList.length) {
       this.currentIndex += 4;
     }
   }

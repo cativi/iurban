@@ -1,5 +1,95 @@
-@if(homeData?.heroSection){
+@defer(when homeData) {
 <hero [data]="homeData?.heroSection"></hero>
-}
+<rutas [recommendationList]="homeData?.recommendedRoutesList"></rutas>
+<eventos [eventos]="homeData?.homePoints"></eventos>
 
-<rutas></rutas>
+<!-- TODO: Include [categories Data] -->
+<categories></categories>
+
+} @placeholder{<p>Loading data...</p>}
+
+<!--  -----eventos-components.TS:------
+
+export class EventosComponent {
+  eventos: HomePoint[] | undefined;
+
+  @Input() set(eventosList: HomePoint[]) {
+    this.eventos = eventosList.filter(item => item.type === 'event')
+    }
+  }
+
+  -->
+
+<!-- -----eventos-components.HTML:------
+
+  @if(eventos){
+    <div id="eventosSection">
+    <div class="container">
+        <h3>Eventos >></h3>
+    </div>
+
+      <div class="col m-4">    
+        @if (isMobile) {
+        @for (event of eventos; track $index) {
+        <evento-card [event]="event"></evento-card>
+        }
+        }
+        </div>
+    </div>
+    }
+    -->
+
+<!-- -----home-data.TS / MODELS:------
+    export interface HomeData {
+        heroSection: HeroSection;
+        recommendedRoutesList: RecommendedRoutesList[];
+        homePoints: HomePoint[];
+    }
+    export interface HomePoint {
+    id: number | string;
+    type: string;
+    category?: Category;
+    items?: Item[];
+    events?: Event[];
+}
+-->
+
+<!-- -----evento.CARD.HTML-----
+<div class="card">
+
+    @if(event){
+
+    <div>
+        <div class="image" style="background-image: url('{{event.image}}')">
+        </div>
+        <div class="heart-holder">
+            <i class="fa-regular fa-heart"></i>
+        </div>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{event.name.es}}</h5>
+        <p><i class="fas fa-eye"></i>{{event.num_clicks}}</p>
+    </div>
+    }
+
+</div> -->
+
+<!-- -----evento.CARD.TS-----
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { HomePoint } from '../../../pages/home/models/home-data';
+
+@Component({
+  selector: 'evento-card',
+  standalone: true,
+  imports: [],
+  templateUrl: './evento-card.component.html',
+  styleUrl: './evento-card.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+
+export class EventoCardComponent {
+
+  @Input() event: HomePoint | undefined;
+
+}
+-->

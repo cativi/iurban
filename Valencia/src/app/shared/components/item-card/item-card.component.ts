@@ -1,39 +1,17 @@
-import { Component, Input, inject } from '@angular/core';
-import { HomeData, RecommendedRoutesList } from '../../../pages/home/models/home-data';
-import { HomeService } from '../../../pages/home/services/home.service';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { RecommendedRoutesList } from '../../../pages/home/models/home-data';
 
 @Component({
   selector: 'item-card',
   standalone: true,
   imports: [],
   templateUrl: './item-card.component.html',
-  styleUrl: './item-card.component.css'
+  styleUrl: './item-card.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemCardComponent {
 
-  @Input() recommendation: any;
+  @Input() item: RecommendedRoutesList | undefined;
 
-  itemCard: HomeData | undefined;
-
-  recommendationList: RecommendedRoutesList[] = [];
-
-  private homeService = inject(HomeService);
-
-  ngOnInit() {
-    this.homeService.loadHomeData().subscribe((response: HomeData) => {
-      this.itemCard = response;
-      this.recommendationList = this.itemCard.recommendedRoutesList;
-      console.log(this.recommendationList);
-    })
-  }
 }
 
-// "recommendedRoutesList": [
-//   {
-//       "id": 523,
-//       "name": {
-//           "es": "Valencia en 2 d\u00edas",
-//       },
-//       "image": "https:.png",
-//       "route_days": 2
-//   },
