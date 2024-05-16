@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Item } from '../../../pages/home/models/home-data';
+import { Category, HomePoint, Item } from '../../../pages/home/models/home-data';
 
 @Component({
   selector: 'evento-card',
@@ -14,12 +14,8 @@ export class EventoCardComponent {
 
   @Input() event: Item | undefined;
 
-  ngOnInit() {
-    if (this.item?.type === "events") {
-      this.item.events?.forEach((item) => {
-        // console.log(event.image);
-      });
-    }
-  }
+  @Input() homePoint: HomePoint | undefined;
+  @Input() ctg: Category | undefined;
+
 }
 

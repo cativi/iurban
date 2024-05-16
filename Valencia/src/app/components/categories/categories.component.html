@@ -1,32 +1,25 @@
 @if(categories){
-<div>
-  <h2>¡Tenemos estas rutas preparadas para ti!</h2>
-
-  <div class="col m-4">
-
-    <!-- BIGGER THAN 1224px -->
-    @if (!isMobile) {
-    <div class="button-container">
-      <button (click)="previousItems()"><i class="fas fa-chevron-left"></i></button>
-    </div>
-
-    @for (category of categories.slice(currentIndex, currentIndex + 4); track $index) {
-    <category-card [item]="category"></category-card>
-    }
-    <div class="button-container">
-      <button (click)="nextItems()"><i class="fas fa-chevron-right"></i></button>
-    </div>
-    }
-
-    <!-- SMALLER THAN 1224px -->
-
-    @if (isMobile) {
-    @for (category of categories; track $index) {
-    <category-card [item]="category"></category-card>
-    }
-    }
-
+@for (item of categories; track $index) {
+<h2>{{item?.category?.name?.es}}</h2>
+<div class="col m-4">
+  @if (!isMobile) {
+  <div class="button-container">
+    <button (click)="previousItems()"><i class="fas fa-chevron-left"></i>
+    </button>
   </div>
-
+  <!-- TODO: replace track $index with track item/category.id -->
+  @for (category of item?.items?.slice(currentIndex, currentIndex + 4); track $index) {
+  <category-card [category]="category"></category-card>
+  }
+  <div class="button-container">
+    <button (click)="nextItems()"><i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+  }
+  @if (isMobile) {
+  @for (category of item.items; track $index) { <category-card [category]="category"></category-card>
+  }
+  }
 </div>
+}
 }
