@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { RecommendedRoutesList } from '../../../pages/home/models/home-data';
+import { RecommendedRoutesList } from '../../../core/models/home-data';
 
 @Component({
   selector: 'item-card',

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { HeroSection } from '../../../pages/home/models/home-data';
+import { HeroSection } from '../../../core/models/home-data';
 
 @Component({
   selector: 'hero',

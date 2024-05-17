@@ -1,5 +1,5 @@
 import { Component, HostListener, Input } from '@angular/core';
-import { Item } from '../../../pages/home/models/home-data';
+import { HomePoint, Item, RecommendedRoutesList } from '../../../core/models/home-data';
 
 @Component({
   selector: 'carousel',
@@ -9,7 +9,10 @@ import { Item } from '../../../pages/home/models/home-data';
   styleUrl: './carousel.component.css'
 })
 export class CarouselComponent {
+
   @Input() items: Item[] | undefined;
+  @Input() categories: HomePoint[] | undefined;
+  @Input() recommendationList: RecommendedRoutesList[] | undefined;
 
   currentIndex: number = 0;
   isMobile: boolean = false;
@@ -40,3 +43,6 @@ export class CarouselComponent {
     }
   }
 }
+
+
+

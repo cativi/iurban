@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Category } from '../../../pages/home/models/home-data';
+import { Category, Item } from '../../../core/models/home-data';
 
 @Component({
   selector: 'category-card',
@@ -13,5 +13,6 @@ import { Category } from '../../../pages/home/models/home-data';
 export class CategoryCardComponent {
 
   @Input() category: Category | undefined;
+  @Input() items: Item | undefined;
 }
 

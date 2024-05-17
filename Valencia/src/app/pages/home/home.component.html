@@ -1,5 +1,7 @@
 @defer(when homeData) {
 <hero [data]="homeData?.heroSection"></hero>
 <rutas [recommendationList]="recommendedRoutes"></rutas>
-<categories [categories]="categories"></categories>
+<div class="container">
+  <categories [categories]="categories"></categories>
+</div>
 } @placeholder{<p>Loading data...</p>}
