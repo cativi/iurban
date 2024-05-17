@@ -1,27 +1,25 @@
-# Valencia
+# README for Valencia iUrban App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
+## Introduction
+The Valencia City Touristic App is designed to showcase the various possibilities and attractions that Valencia has to offer to travelers. It aims to provide a comprehensive guide to the city's tourist spots, activities, and cultural experiences.
 
-## Development server
+## Installation
+To install the app, you can fork the code from the GitHub repository. Here is the link to the repository: [GitHub Repository](https://github.com/cativi/iurban/tree/main/Valencia)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Demo
+You can access a live demo of the app by visiting the following link: [App Demo](https://vlc-iurban.web.app/home)
 
-## Code scaffolding
+## Usage
+The app is user-friendly and intuitive. It allows travelers to explore different tourist destinations in Valencia, discover popular attractions, and plan their itineraries. The app provides detailed information about each location, including descriptions, photos, and reviews from other travelers. Users can also customize their travel guide and create a personalized itinerary based on their interests and preferences.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Configuration
+The app does not require any specific configuration. However, it is recommended to have an internet connection to access the latest information and updates.
 
-## Build
+## Contributing
+Contributions to the app are welcome! If you have any suggestions, bug reports, or feature requests, please feel free to submit them through the GitHub repository. We appreciate your feedback and contributions to make the app even better.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## License
+All rights are reserved for the App. Unauthorized use, distribution, or modification of the app is prohibited.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Contact Information
+For any inquiries or questions, you can reach out to us at hola@cafeconcarlos.com.
